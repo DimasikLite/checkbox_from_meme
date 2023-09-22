@@ -1,0 +1,270 @@
+:root {
+    --size: 96px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #cad0d9;
+}
+
+.block_for_checkbox {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkbox_hidden {
+    display: none;
+}
+
+.checkbox_hidden:checked ~ .checkbox_frame .sky {
+    top: 110%;
+}
+
+.checkbox_hidden:checked ~ .checkbox_frame .active_ball {
+    left: calc(100% - 12px - var(--size));
+}
+
+.checkbox_hidden:checked ~ .checkbox_frame .active_ball .moon {
+    left: 0;
+}
+
+.checkbox_hidden:checked ~ .checkbox_frame .background_block {
+    left: calc(100% - 12px - var(--size));
+    background-color: #52535e;
+    box-shadow: 0 0 0 20px #3e414c, 0 0 0 40px #2d313b, 0 0 0 300px #1c1f2c;
+}
+
+.checkbox_hidden:checked ~ .checkbox_frame .stars_block {
+    top: 0;
+}
+
+.label_checkbox {
+    position: relative;
+    width: 300px;
+    height: 120px;
+}
+
+.checkbox_frame {
+    overflow: hidden;
+    position: relative;
+    border-radius: 9999px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 1px 1px 3px 1px #fff;
+}
+
+.checkbox_frame:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    inset: 0;
+    border-radius: 9999px;
+    box-shadow: inset 0px 5px 11px 6px #00000099;
+}
+
+.background_block {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 120px;
+    transition: 0.8s;
+    border-radius: 50%;
+    transform: scale(1.62);
+    box-shadow: 0 0 0 20px #5b92c1, 0 0 0 40px #4a87bb, 0 0 0 300px #3c78b4;
+    background-color: #6a9dc8;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    transition: 0.8s;
+    border-radius: 50px;
+    box-shadow:
+                290px 60px 0px 40px #fff,
+                240px 80px 0px 20px #fff,
+                200px 105px 0px 20px #fff,
+                155px 115px 0px 20px #fff,
+                120px 110px 0px 20px #fff,
+                80px 120px 0px 20px #fff,
+                45px 128px 0px 20px #fff,
+
+                270px 43px 0px 40px #9fb6c8,
+                215px 70px 0px 20px #9fb6c8,
+                180px 80px 0px 20px #9fb6c8,
+                150px 95px 0px 20px #9fb6c8,
+                120px 90px 0px 20px #9fb6c8,
+                80px 110px 0px 20px #9fb6c8,
+                40px 120px 0px 20px #9fb6c8;
+}
+
+.active_ball {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    overflow: hidden;
+    transform: translateY(-50%);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    z-index: 1;
+    transition: left 0.8s;
+}
+
+.sun,
+.moon {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    transition: 0.8s;
+}
+
+.sun {
+    left: 0;
+    background-color: #f2c22a;
+    box-shadow:  inset 0px 2px 7px #fff, inset 0px -1px 5px #000, 2px 2px 5px 0px #00000057;
+}
+
+.moon {
+    left: 100%;
+    width: 100%;
+    background-color: #c2c8cd;
+    box-shadow:  inset 0px 2px 7px #fff, inset 0px -1px 5px #000, 2px 2px 5px 0px #00000057;
+}
+
+.vulkan_moon {
+    position: absolute;
+    background-color: #959eb0;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    box-shadow: inset 0 0 2px 2px #898f9c;
+}
+
+.v_1 {
+    top: 15px;
+    left: 38px;
+}
+
+.v_2 {
+    top: 48px;
+    left: 23px;
+    transform: scale(1.5);
+}
+
+.v_3 {
+    top: 57px;
+    left: 60px;
+}
+
+.stars_block {
+    transition: 0.8s;
+    position: absolute;
+    top: -100%;
+}
+
+.star {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+}
+
+.star::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scaleY(0.3);
+    background-color: white;
+}
+
+.star::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scaleX(0.3);
+    background-color: white;
+}
+
+
+.star_1 {
+    top: 12px;
+    left: 75px;
+    transform: scale(1);
+}
+
+.star_2 {
+    top: 35px;
+    left: 40px;
+    transform: scale(0.5);
+}
+
+.star_3 {
+    top: 50px;
+    left: 75px;
+    transform: scale(0.5);
+}
+
+.star_4 {
+    top: 60px;
+    left: 15px;
+    transform: scale(0.3);
+}
+
+.star_5 {
+    top: 80px;
+    left: 40px;
+    transform: scale(0.5);
+}
+
+.star_6 {
+    top: 90px;
+    left: 75px;
+    transform: scale(0.4);
+}
+
+.star_7 {
+    top: 30px;
+    left: 132px;
+    transform: scale(0.4);
+}
+
+.star_8 {
+    top: 60px;
+    left: 125px;
+    transform: scale(0.3);
+}
+
+.star_9 {
+    top: 85px;
+    left: 140px;
+    transform: scale(0.8);
+}
+
+.star_10 {
+    top: 35px;
+    left: 165px;
+    transform: scale(1.05);
+}
+
+.star_11 {
+    top: 70px;
+    left: 160px;
+    transform: scale(0.3);
+}
